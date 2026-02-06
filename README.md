@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+⸻
 
-## Project info
+# RBP Finivis
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+RBP Finivis is a web-based financial services application focused on compliance-oriented workflows, secure data handling, and a scalable frontend architecture. The project is designed to integrate cleanly with backend services and third-party APIs while maintaining audit-friendly and production-ready development practices.
 
-## How can I edit this code?
+This repository contains the frontend codebase of the application.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Framework: Remix / React
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Backend Services: Supabase (Authentication, Database, Storage)
+- Build Tool: Vite
+- Version Control: Git & GitHub
+- Deployment Platform: Vercel
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+├── app / src
+├── public
+├── supabase
+├── styles
+├── package.json
+├── vite.config.ts
+└── README.md
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Environment Variables
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+This project uses environment variables for configuration and secrets.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Environment files are excluded from version control.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Example:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+
+Set environment variables:
+- Locally using a `.env` file
+- In production via Vercel project settings
+
+---
+
+## Local Development
+
+Prerequisites:
+- Node.js (v18 or later)
+- npm
+
+Commands:
+
+```bash
+npm install
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+The application will run on the port shown in the terminal.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+⸻
 
-**Use GitHub Codespaces**
+Build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+npm run build
 
-## What technologies are used for this project?
 
-This project is built with:
+⸻
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Deployment
 
-## How can I deploy this project?
+The application is deployed using Vercel with GitHub integration.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Deployment flow:
+	•	Push code to the main branch
+	•	Vercel automatically builds and deploys
+	•	Environment variables are injected securely
 
-## Can I connect a custom domain to my Lovable project?
+Rollback and preview deployments are managed through Vercel.
 
-Yes, you can!
+⸻
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Development Notes
+	•	Secrets and credentials are never committed
+	•	Database changes are tracked using Supabase migrations
+	•	Code is written with maintainability and scalability in mind
+	•	All changes are version-controlled using Git
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+⸻
+
+License
+
+This project is currently unlicensed.
+Usage or redistribution requires permission from the project owner.
+
+⸻
+
+Maintainer
+
+Aakash Sharma
+Frontend / Full-Stack Developer
+
+⸻
+
+Status
+
+Repository initialized and deployed-ready.
+
+—-

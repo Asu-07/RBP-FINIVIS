@@ -41,6 +41,7 @@ Environment files are excluded from version control.
 Example:
 
 SUPABASE_URL=
+
 SUPABASE_ANON_KEY=
 
 Set environment variables:

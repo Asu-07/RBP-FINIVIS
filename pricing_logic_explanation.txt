@@ -1,0 +1,65 @@
+Slab-wise Pricing Implementation Logic
+=======================================
+
+Overview
+--------
+The pricing logic has been centralized in `src/utils/pricing.ts` to ensure consistency across the application. 
+The logic is driven by the "IBR + Markup %" model, where the markup percentage varies based on the Slab (Foreign Currency Amount) and the Product Type.
+
+1. Slab Definition
+------------------
+The slabs are defined based on the Foreign Currency (FCY) Amount.
+(Assuming the units 0-50, 51-100, etc. refer to Thousands of base units, e.g., 50k USD).
+
+- Slab 1: 0 - 50,000 FCY
+- Slab 2: 50,001 - 100,000 FCY
+- Slab 3: 100,001 - 200,000 FCY (and above)
+
+2. Product Rates
+----------------
+Each slab defines a specific markup percentage for different products:
+
+| Product           | Slab 1 (0-50k) | Slab 2 (50-100k) | Slab 3 (100k+) |
+|-------------------|----------------|------------------|----------------|
+| Education TT      | 3.00%          | 1.25%            | 1.00%          |
+| Maintaince TT     | 4.00%          | 1.50%            | 1.25%          |
+| Gift TT           | 4.00%          | 1.50%            | 1.25%          |
+| Currency Card     | 2.00%          | 1.25%            | 1.00%          |
+| Currency Note     | 2.50%          | 1.50%            | 1.00%          |
+
+3. Calculation Formula
+----------------------
+The final exchange rate is calculated as:
+
+    Final Rate = IBR * (1 + (Markup% / 100))
+
+Where:
+- `IBR`: Inter-Bank Rate (Base market rate).
+- `Markup%`: Retrieved from the table above based on the Product and Amount.
+
+4. Implementation in Components
+-------------------------------
+
+A. Remittance (`Remittance.tsx`)
+   - **Product Mapping**: 
+     - "Education Abroad" -> `Education TT`
+     - "Gift" -> `Gift TT`
+     - All others (Family Maintenance, Travel, etc.) -> `Maintaince TT`
+   - **Fee Removal**: The explicit "Service Fee" (previously 0.3%) has been removed (set to 0). The revenue is now entirely captured within the rate markup.
+
+B. Forex Card (`ForexCardApply.tsx`)
+   - **Product**: `Currency Card`
+   - **Display**: Added a new section to display the "Slab-wise Exchange Rate" and "Total Payable".
+
+C. Currency Exchange (`Step1OrderDetails.tsx`)
+   - **Product**: `Currency Note`
+   - **Logic**: Applies to "Buy Forex" transactions (Customer buying notes).
+   - **Fee Removal**: Explicit service fee set to 0.
+
+5. Example
+----------
+Scenario: Customer wants to send 10,000 USD for Education.
+- IBR (Base Rate): 84.00
+- Slab: 0 - 50,000 (Markup: 3.00%)
+- Calculation: 84.00 * (1 + 0.03) = 84.00 * 1.03 = 86.52
+- Final Rate: ₹86.52

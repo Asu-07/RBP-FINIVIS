@@ -1,0 +1,29 @@
+--- Testing Categories ---
+Categories found: 7
+- Including USA and CANADA (Worldwide) (ID: 296a9c2f-3071-4395-a416-31d60fdf0d4d)
+- Europe (ID: 296a9c2f-3071-4395-c416-31d60fdf0d4e)
+- Asia (ID: 296a9c2f-3071-4395-g416-31d60fdf0d4e)
+- Domestic (ID: 296a9n2f-3071-4395-g416-31d60fdf0d4e)
+- United Arab Emirates (ID: 296b9c2f-3071-4395-a416-31d60fdf0d4e)
+- Australia and New Zealand (ID: 296c9c2f-3071-4395-g416-31d60fdf0d4e)
+- Excluding USA & Canada (ID: 9de85e1d-3a05-4ae1-aa03-87cc5fe41640)
+
+--- Testing Plans for Category: Including USA and CANADA (Worldwide) (ID: 296a9c2f-3071-4395-a416-31d60fdf0d4d) ---
+[Standard] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=10&age=30&category=296a9c2f-3071-4395-a416-31d60fdf0d4d
+[Standard] Plans found: 0
+[Short Duration (5)] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=5&age=30&category=296a9c2f-3071-4395-a416-31d60fdf0d4d
+[Short Duration (5)] Plans found: 0
+[Long Duration (30)] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=30&age=30&category=296a9c2f-3071-4395-a416-31d60fdf0d4d
+[Long Duration (30)] Plans found: 0
+[Age 25] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=10&age=25&category=296a9c2f-3071-4395-a416-31d60fdf0d4d
+[Age 25] Plans found: 0
+
+--- Testing Plans for Category: Asia (ID: 296a9c2f-3071-4395-g416-31d60fdf0d4e) ---
+[Standard] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=10&age=30&category=296a9c2f-3071-4395-g416-31d60fdf0d4e
+[Standard] Plans found: 0
+[Short Duration (5)] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=5&age=30&category=296a9c2f-3071-4395-g416-31d60fdf0d4e
+[Short Duration (5)] Plans found: 0
+[Long Duration (30)] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=30&age=30&category=296a9c2f-3071-4395-g416-31d60fdf0d4e
+[Long Duration (30)] Plans found: 0
+[Age 25] Fetching: https://dolphin.asego.in:8080/ext/b2b/v1/plan/7a954713-2468-4ab2-9b28-34883b10f9bf?duration=10&age=25&category=296a9c2f-3071-4395-g416-31d60fdf0d4e
+[Age 25] Plans found: 0
